@@ -111,7 +111,7 @@
                     <navigationItem key="navigationItem" id="Zlv-sD-I1q"/>
                     <connections>
                         <outlet property="tableView" destination="nYg-8I-qmv" id="6FA-zH-4RH"/>
-                        <segue destination="hWD-Nh-wDC" kind="show" identifier="ShowSingleImage" id="yxT-wd-iHd"/>
+                        <segue destination="hWD-Nh-wDC" kind="presentation" identifier="ShowSingleImage" modalPresentationStyle="overFullScreen" id="yxT-wd-iHd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -230,18 +230,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="KkZ-cK-ee9">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04F-UH-RXb">
+                                <rect key="frame" x="0.0" y="59" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="G4I-Q2-fvL"/>
+                                    <constraint firstAttribute="width" constant="48" id="ueY-jd-I1y"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="" image="Backward"/>
+                                <connections>
+                                    <action selector="didTapBackButton" destination="hWD-Nh-wDC" eventType="touchUpInside" id="Jct-Ru-1Hq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yKL-QJ-Q9z"/>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KkZ-cK-ee9" firstAttribute="leading" secondItem="yKL-QJ-Q9z" secondAttribute="leading" id="9N8-Jt-Yck"/>
-                            <constraint firstItem="KkZ-cK-ee9" firstAttribute="trailing" secondItem="yKL-QJ-Q9z" secondAttribute="trailing" id="Nb0-jq-exe"/>
+                            <constraint firstItem="KkZ-cK-ee9" firstAttribute="leading" secondItem="OOj-2s-lEm" secondAttribute="leading" id="9N8-Jt-Yck"/>
+                            <constraint firstItem="04F-UH-RXb" firstAttribute="top" secondItem="yKL-QJ-Q9z" secondAttribute="top" id="Kx7-wr-A9s"/>
+                            <constraint firstItem="KkZ-cK-ee9" firstAttribute="trailing" secondItem="OOj-2s-lEm" secondAttribute="trailing" id="Nb0-jq-exe"/>
                             <constraint firstItem="KkZ-cK-ee9" firstAttribute="top" secondItem="OOj-2s-lEm" secondAttribute="topMargin" id="O5G-FX-o0u"/>
+                            <constraint firstItem="04F-UH-RXb" firstAttribute="leading" secondItem="yKL-QJ-Q9z" secondAttribute="leading" id="czp-7H-meQ"/>
                             <constraint firstAttribute="bottomMargin" secondItem="KkZ-cK-ee9" secondAttribute="bottom" id="grM-fr-KZo"/>
                         </constraints>
                     </view>
@@ -258,6 +272,7 @@
     <resources>
         <image name="0" width="200" height="132"/>
         <image name="Active" width="44" height="44"/>
+        <image name="Backward" width="24" height="24"/>
         <image name="Exit" width="44" height="44"/>
         <image name="Photo" width="70" height="70"/>
         <image name="tab_editorial_active" width="30" height="30"/>
