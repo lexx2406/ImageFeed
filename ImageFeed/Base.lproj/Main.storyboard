@@ -229,16 +229,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LVG-zZ-2Wx">
+                                <rect key="frame" x="76" y="362" width="240" height="128"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="TUg-EL-uRh"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="8O6-ud-Cxw"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hWD-Nh-wDC" id="zJs-Af-Z8k"/>
+                                </connections>
+                            </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="KkZ-cK-ee9">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04F-UH-RXb">
-                                <rect key="frame" x="0.0" y="59" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04F-UH-RXb">
+                                <rect key="frame" x="0.0" y="59" width="24" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="G4I-Q2-fvL"/>
-                                    <constraint firstAttribute="width" constant="48" id="ueY-jd-I1y"/>
+                                    <constraint firstAttribute="height" constant="48" id="Qs9-OL-fQB"/>
+                                    <constraint firstAttribute="width" constant="48" id="bEj-hl-WS2"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="Backward"/>
@@ -251,17 +259,21 @@
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KkZ-cK-ee9" firstAttribute="leading" secondItem="OOj-2s-lEm" secondAttribute="leading" id="9N8-Jt-Yck"/>
-                            <constraint firstItem="04F-UH-RXb" firstAttribute="top" secondItem="yKL-QJ-Q9z" secondAttribute="top" id="Kx7-wr-A9s"/>
-                            <constraint firstItem="KkZ-cK-ee9" firstAttribute="trailing" secondItem="OOj-2s-lEm" secondAttribute="trailing" id="Nb0-jq-exe"/>
-                            <constraint firstItem="KkZ-cK-ee9" firstAttribute="top" secondItem="OOj-2s-lEm" secondAttribute="topMargin" id="O5G-FX-o0u"/>
-                            <constraint firstItem="04F-UH-RXb" firstAttribute="leading" secondItem="yKL-QJ-Q9z" secondAttribute="leading" id="czp-7H-meQ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="KkZ-cK-ee9" secondAttribute="bottom" id="grM-fr-KZo"/>
+                            <constraint firstItem="LVG-zZ-2Wx" firstAttribute="top" secondItem="OOj-2s-lEm" secondAttribute="top" id="3Cx-Ms-AI7"/>
+                            <constraint firstItem="LVG-zZ-2Wx" firstAttribute="leading" secondItem="yKL-QJ-Q9z" secondAttribute="leading" id="9WE-YV-Ii5"/>
+                            <constraint firstAttribute="bottom" secondItem="LVG-zZ-2Wx" secondAttribute="bottom" id="SIH-ht-xQg"/>
+                            <constraint firstAttribute="bottom" secondItem="KkZ-cK-ee9" secondAttribute="bottom" id="W2k-rk-vEK"/>
+                            <constraint firstItem="KkZ-cK-ee9" firstAttribute="leading" secondItem="OOj-2s-lEm" secondAttribute="leading" id="ajW-pX-RTl"/>
+                            <constraint firstItem="KkZ-cK-ee9" firstAttribute="top" secondItem="OOj-2s-lEm" secondAttribute="top" id="bk7-kR-iC7"/>
+                            <constraint firstItem="yKL-QJ-Q9z" firstAttribute="trailing" secondItem="LVG-zZ-2Wx" secondAttribute="trailing" id="oGv-Ja-eEO"/>
+                            <constraint firstItem="04F-UH-RXb" firstAttribute="top" secondItem="yKL-QJ-Q9z" secondAttribute="top" id="y67-aN-ydt"/>
+                            <constraint firstAttribute="trailing" secondItem="KkZ-cK-ee9" secondAttribute="trailing" id="yTh-n0-ZEx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yl6-Rr-Bvm"/>
                     <connections>
                         <outlet property="imageView" destination="KkZ-cK-ee9" id="FTD-eL-UCP"/>
+                        <outlet property="scrollView" destination="LVG-zZ-2Wx" id="J8g-2K-eN7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gmg-gt-tes" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
