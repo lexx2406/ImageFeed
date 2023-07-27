@@ -16,7 +16,7 @@ final class ProfileViewController: UIViewController {
         let imageView = UIImageView(image: avatar)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(imageView)
-
+        
         let verticalStack = UIStackView(arrangedSubviews: [self.nameLabel, self.loginNameLabel, self.descriptionLabel ])
         verticalStack.spacing = 8
         verticalStack.axis = .vertical
