@@ -128,70 +128,10 @@
                     <view key="view" contentMode="scaleToFill" id="ai6-lg-TMh" userLabel="Avatar Image View">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="BtD-24-nEU" userLabel="Avatar">
-                                <rect key="frame" x="16" y="91" width="70" height="70"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="35"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Екатерина Новикова" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sp2-db-vqV" userLabel="Name Label">
-                                <rect key="frame" x="16" y="236" width="320" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@ekaterina_nov" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCj-sA-fI0" userLabel="Login Label">
-                                <rect key="frame" x="16" y="265" width="97" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.68235294117647061" green="0.68627450980392157" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello, World!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb1-Hg-7fk" userLabel="Description Label">
-                                <rect key="frame" x="16" y="294" width="97" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FC5-Ca-bez">
-                                <rect key="frame" x="333" y="114" width="44" height="44"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="Exit"/>
-                                <connections>
-                                    <action selector="didTapLogoutButton" destination="y7v-WO-Qsy" eventType="touchUpInside" id="sjh-dA-I87"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FTG-tW-CLY"/>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="FTG-tW-CLY" firstAttribute="trailing" secondItem="FC5-Ca-bez" secondAttribute="trailing" constant="16" id="E9Y-DP-1DI"/>
-                            <constraint firstItem="sp2-db-vqV" firstAttribute="top" secondItem="BtD-24-nEU" secondAttribute="bottom" constant="8" id="KjJ-Au-bPK"/>
-                            <constraint firstItem="VCj-sA-fI0" firstAttribute="top" secondItem="sp2-db-vqV" secondAttribute="bottom" constant="8" id="OCk-Gv-3Am"/>
-                            <constraint firstItem="Qb1-Hg-7fk" firstAttribute="trailing" secondItem="sp2-db-vqV" secondAttribute="trailing" id="PHb-iy-wGh"/>
-                            <constraint firstItem="VCj-sA-fI0" firstAttribute="trailing" secondItem="sp2-db-vqV" secondAttribute="trailing" id="Rs3-II-CZ9"/>
-                            <constraint firstItem="BtD-24-nEU" firstAttribute="leading" secondItem="FTG-tW-CLY" secondAttribute="leading" constant="16" id="UCn-dC-VSA"/>
-                            <constraint firstItem="sp2-db-vqV" firstAttribute="leading" secondItem="BtD-24-nEU" secondAttribute="leading" id="aGd-ar-PoK"/>
-                            <constraint firstItem="VCj-sA-fI0" firstAttribute="leading" secondItem="sp2-db-vqV" secondAttribute="leading" id="cGp-NU-oGq"/>
-                            <constraint firstItem="Qb1-Hg-7fk" firstAttribute="top" secondItem="VCj-sA-fI0" secondAttribute="bottom" constant="8" id="oXs-xT-spx"/>
-                            <constraint firstItem="FC5-Ca-bez" firstAttribute="top" secondItem="FTG-tW-CLY" secondAttribute="top" constant="55" id="q9e-Th-J1s"/>
-                            <constraint firstItem="Qb1-Hg-7fk" firstAttribute="leading" secondItem="sp2-db-vqV" secondAttribute="leading" id="qnv-pd-xUR"/>
-                            <constraint firstItem="BtD-24-nEU" firstAttribute="top" secondItem="FTG-tW-CLY" secondAttribute="top" constant="32" id="vNg-nF-OCh"/>
-                            <constraint firstItem="FC5-Ca-bez" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BtD-24-nEU" secondAttribute="trailing" id="ynX-n5-gAX"/>
-                            <constraint firstItem="FTG-tW-CLY" firstAttribute="trailing" secondItem="sp2-db-vqV" secondAttribute="trailing" constant="16" id="zEB-DW-5wu"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tab_profile_active" id="746-DQ-sWB"/>
-                    <connections>
-                        <outlet property="avatar" destination="BtD-24-nEU" id="Txh-Pr-K8e"/>
-                        <outlet property="descriptionLabel" destination="Qb1-Hg-7fk" id="HhD-M9-hqm"/>
-                        <outlet property="loginLabel" destination="VCj-sA-fI0" id="8bj-I9-3Uh"/>
-                        <outlet property="logoutButton" destination="FC5-Ca-bez" id="cZm-v2-caH"/>
-                        <outlet property="nameLabel" destination="sp2-db-vqV" id="5Uq-7g-lH0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihn-df-19v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -242,8 +182,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04F-UH-RXb">
-                                <rect key="frame" x="0.0" y="59" width="24" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04F-UH-RXb">
+                                <rect key="frame" x="0.0" y="59" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Qs9-OL-fQB"/>
                                     <constraint firstAttribute="width" constant="48" id="bEj-hl-WS2"/>
@@ -278,6 +218,7 @@
                             <constraint firstAttribute="bottom" secondItem="KkZ-cK-ee9" secondAttribute="bottom" id="W2k-rk-vEK"/>
                             <constraint firstItem="KkZ-cK-ee9" firstAttribute="leading" secondItem="OOj-2s-lEm" secondAttribute="leading" id="ajW-pX-RTl"/>
                             <constraint firstItem="KkZ-cK-ee9" firstAttribute="top" secondItem="OOj-2s-lEm" secondAttribute="top" id="bk7-kR-iC7"/>
+                            <constraint firstItem="04F-UH-RXb" firstAttribute="leading" secondItem="KkZ-cK-ee9" secondAttribute="leading" id="dH6-a8-5XD"/>
                             <constraint firstItem="Ebp-3f-cde" firstAttribute="centerX" secondItem="yKL-QJ-Q9z" secondAttribute="centerX" id="gnt-Pw-1jR"/>
                             <constraint firstItem="yKL-QJ-Q9z" firstAttribute="trailing" secondItem="LVG-zZ-2Wx" secondAttribute="trailing" id="oGv-Ja-eEO"/>
                             <constraint firstItem="04F-UH-RXb" firstAttribute="top" secondItem="yKL-QJ-Q9z" secondAttribute="top" id="y67-aN-ydt"/>
@@ -299,8 +240,6 @@
         <image name="0" width="200" height="132"/>
         <image name="Active" width="44" height="44"/>
         <image name="Backward" width="24" height="24"/>
-        <image name="Exit" width="44" height="44"/>
-        <image name="Photo" width="70" height="70"/>
         <image name="Sharing 1" width="51" height="50"/>
         <image name="tab_editorial_active" width="30" height="30"/>
         <image name="tab_profile_active" width="30" height="30"/>
