@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vAL-Zt-Yyb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SIp-WK-e27">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -235,12 +235,63 @@
             </objects>
             <point key="canvasLocation" x="1995" y="-616"/>
         </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="Fhr-UI-ARa">
+            <objects>
+                <viewController id="SIp-WK-e27" userLabel="Auth View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ner-Yv-8Fd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="auth_screen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="0No-Tz-15O">
+                                <rect key="frame" x="166.66666666666666" y="396" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Drj-wC-mPU"/>
+                                    <constraint firstAttribute="width" constant="60" id="tAn-0w-KLq"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNC-nm-VOU">
+                                <rect key="frame" x="16" y="680" width="361" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="jP4-gA-QUj"/>
+                                </constraints>
+                                <color key="tintColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Войти">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KMV-PN-4qn"/>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0No-Tz-15O" firstAttribute="centerY" secondItem="ner-Yv-8Fd" secondAttribute="centerY" id="0b6-A2-b4o"/>
+                            <constraint firstItem="iNC-nm-VOU" firstAttribute="leading" secondItem="KMV-PN-4qn" secondAttribute="leading" constant="16" id="6yM-G0-jKo"/>
+                            <constraint firstItem="iNC-nm-VOU" firstAttribute="centerX" secondItem="ner-Yv-8Fd" secondAttribute="centerX" id="Ism-Z9-dlz"/>
+                            <constraint firstItem="KMV-PN-4qn" firstAttribute="trailing" secondItem="iNC-nm-VOU" secondAttribute="trailing" constant="16" id="Nmn-kW-bao"/>
+                            <constraint firstItem="0No-Tz-15O" firstAttribute="centerX" secondItem="ner-Yv-8Fd" secondAttribute="centerX" id="R3G-hO-XaQ"/>
+                            <constraint firstItem="KMV-PN-4qn" firstAttribute="bottom" secondItem="iNC-nm-VOU" secondAttribute="bottom" constant="90" id="RgK-Jc-qXV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HTR-cT-bai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2430" y="-1030"/>
+        </scene>
     </scenes>
     <resources>
         <image name="0" width="200" height="132"/>
         <image name="Active" width="44" height="44"/>
         <image name="Backward" width="24" height="24"/>
         <image name="Sharing 1" width="51" height="50"/>
+        <image name="auth_screen_logo" width="60" height="60"/>
         <image name="tab_editorial_active" width="30" height="30"/>
         <image name="tab_profile_active" width="30" height="30"/>
     </resources>
