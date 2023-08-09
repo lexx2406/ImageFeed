@@ -271,7 +271,7 @@ CiAgICAKA
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="RrN-Uw-any" kind="presentation" identifier="ShowWebView" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="sap-67-luO"/>
+                                    <segue destination="3tj-sn-Q9a" kind="presentation" identifier="ShowWebView" modalPresentationStyle="fullScreen" id="QVU-h9-ECJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -311,50 +311,19 @@ CiAgICAKA
             <point key="canvasLocation" x="-2431.2977099236641" y="-1030.2816901408451"/>
         </scene>
         <!--Web View View Controller-->
-        <scene sceneID="M2i-FD-WZl">
+        <scene sceneID="n1U-2v-xdw">
             <objects>
-                <viewController id="RrN-Uw-any" userLabel="Web View View Controller" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mu9-Gb-z33" customClass="WebViewViewController" customModule="ImageFeed" customModuleProvider="target">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5YP-an-B5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="3tj-sn-Q9a" customClass="WebViewViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W9R-p4-fwb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKM-b5-og8">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDe-Rc-5Ki">
-                                <rect key="frame" x="0.0" y="59" width="64" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="deV-qh-9Vi"/>
-                                    <constraint firstAttribute="width" constant="64" id="nPf-ej-rVc"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="nav_back_button"/>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="pe8-3i-c9L"/>
+                        <viewLayoutGuide key="safeArea" id="D8L-eh-MCX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="aKM-b5-og8" secondAttribute="trailing" id="6pE-ao-YVp"/>
-                            <constraint firstItem="aKM-b5-og8" firstAttribute="top" secondItem="mu9-Gb-z33" secondAttribute="top" id="YYp-fY-ME3"/>
-                            <constraint firstItem="zDe-Rc-5Ki" firstAttribute="leading" secondItem="pe8-3i-c9L" secondAttribute="leading" id="b5x-oa-xl7"/>
-                            <constraint firstItem="zDe-Rc-5Ki" firstAttribute="top" secondItem="pe8-3i-c9L" secondAttribute="top" id="nIi-as-1yE"/>
-                            <constraint firstAttribute="bottom" secondItem="aKM-b5-og8" secondAttribute="bottom" id="u5K-rj-Duk"/>
-                            <constraint firstItem="aKM-b5-og8" firstAttribute="leading" secondItem="mu9-Gb-z33" secondAttribute="leading" id="yjG-Re-Ro5"/>
-                        </constraints>
-                        <connections>
-                            <outlet property="webView" destination="aKM-b5-og8" id="yhd-yL-aZt"/>
-                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="6b9-Qz-LQd"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wWy-LS-BVG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-550.38167938931292" y="-1030.2816901408451"/>
+            <point key="canvasLocation" x="-495" y="-1030"/>
         </scene>
     </scenes>
     <resources>
@@ -363,7 +332,6 @@ CiAgICAKA
         <image name="Backward" width="24" height="24"/>
         <image name="Sharing 1" width="51" height="50"/>
         <image name="auth_screen_logo" width="60" height="60"/>
-        <image name="nav_back_button" width="24" height="24"/>
         <image name="tab_editorial_active" width="30" height="30"/>
         <image name="tab_profile_active" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
