@@ -323,15 +323,19 @@ CiAgICAKA
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ey5-yl-hve">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ey5-yl-hve">
                                 <rect key="frame" x="0.0" y="59" width="64" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="OQN-hq-TvI"/>
                                     <constraint firstAttribute="width" constant="64" id="zzb-mF-E3p"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="nav_back_button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="nav_back_button"/>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cyb-nA-kcx">
+                                <rect key="frame" x="0.0" y="99" width="393" height="4"/>
+                                <color key="progressTintColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D8L-eh-MCX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -340,8 +344,11 @@ CiAgICAKA
                             <constraint firstItem="Ey5-yl-hve" firstAttribute="top" secondItem="D8L-eh-MCX" secondAttribute="top" id="Wnp-EU-N6J"/>
                             <constraint firstItem="FUJ-Q8-FKb" firstAttribute="top" secondItem="W9R-p4-fwb" secondAttribute="top" id="bU8-Iw-EUq"/>
                             <constraint firstItem="Ey5-yl-hve" firstAttribute="leading" secondItem="D8L-eh-MCX" secondAttribute="leading" id="cZC-Yg-7gB"/>
+                            <constraint firstAttribute="trailing" secondItem="cyb-nA-kcx" secondAttribute="trailing" id="gMO-O6-CPh"/>
+                            <constraint firstItem="cyb-nA-kcx" firstAttribute="bottom" secondItem="Ey5-yl-hve" secondAttribute="bottom" id="pep-xz-5KF"/>
                             <constraint firstItem="FUJ-Q8-FKb" firstAttribute="trailing" secondItem="W9R-p4-fwb" secondAttribute="trailing" id="rNS-1i-Fcp"/>
                             <constraint firstAttribute="bottom" secondItem="FUJ-Q8-FKb" secondAttribute="bottom" id="rq1-Ge-vsd"/>
+                            <constraint firstItem="cyb-nA-kcx" firstAttribute="leading" secondItem="W9R-p4-fwb" secondAttribute="leading" id="wxc-H4-ura"/>
                         </constraints>
                     </view>
                     <connections>
