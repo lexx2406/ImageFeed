@@ -323,28 +323,25 @@ CiAgICAKA
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcy-0O-yTn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ey5-yl-hve">
                                 <rect key="frame" x="0.0" y="59" width="64" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="8JD-hq-U3b"/>
-                                    <constraint firstAttribute="height" constant="44" id="Cfh-Hg-9MT"/>
+                                    <constraint firstAttribute="height" constant="44" id="OQN-hq-TvI"/>
+                                    <constraint firstAttribute="width" constant="64" id="zzb-mF-E3p"/>
                                 </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="nav_back_button"/>
-                                <connections>
-                                    <action selector="didTapBackButton:" destination="3tj-sn-Q9a" eventType="touchUpInside" id="DZx-lM-HWS"/>
-                                </connections>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="nav_back_button"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D8L-eh-MCX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FUJ-Q8-FKb" firstAttribute="leading" secondItem="W9R-p4-fwb" secondAttribute="leading" id="0Lb-MT-XaP"/>
-                            <constraint firstAttribute="bottom" secondItem="FUJ-Q8-FKb" secondAttribute="bottom" id="5hR-5G-9pN"/>
-                            <constraint firstItem="jcy-0O-yTn" firstAttribute="top" secondItem="D8L-eh-MCX" secondAttribute="top" id="Lhu-p4-FqF"/>
-                            <constraint firstAttribute="trailing" secondItem="FUJ-Q8-FKb" secondAttribute="trailing" id="PZ3-au-RT5"/>
-                            <constraint firstItem="FUJ-Q8-FKb" firstAttribute="top" secondItem="W9R-p4-fwb" secondAttribute="top" id="pT4-hP-Pby"/>
-                            <constraint firstItem="jcy-0O-yTn" firstAttribute="leading" secondItem="D8L-eh-MCX" secondAttribute="leading" id="zqh-G9-GsQ"/>
+                            <constraint firstItem="FUJ-Q8-FKb" firstAttribute="leading" secondItem="W9R-p4-fwb" secondAttribute="leading" id="DhX-lo-VjP"/>
+                            <constraint firstItem="Ey5-yl-hve" firstAttribute="top" secondItem="D8L-eh-MCX" secondAttribute="top" id="Wnp-EU-N6J"/>
+                            <constraint firstItem="FUJ-Q8-FKb" firstAttribute="top" secondItem="W9R-p4-fwb" secondAttribute="top" id="bU8-Iw-EUq"/>
+                            <constraint firstItem="Ey5-yl-hve" firstAttribute="leading" secondItem="D8L-eh-MCX" secondAttribute="leading" id="cZC-Yg-7gB"/>
+                            <constraint firstItem="FUJ-Q8-FKb" firstAttribute="trailing" secondItem="W9R-p4-fwb" secondAttribute="trailing" id="rNS-1i-Fcp"/>
+                            <constraint firstAttribute="bottom" secondItem="FUJ-Q8-FKb" secondAttribute="bottom" id="rq1-Ge-vsd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -353,7 +350,7 @@ CiAgICAKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YP-an-B5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-495" y="-1030"/>
+            <point key="canvasLocation" x="-495.41984732824426" y="-1030.2816901408451"/>
         </scene>
     </scenes>
     <resources>
