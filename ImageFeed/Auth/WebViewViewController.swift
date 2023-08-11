@@ -42,6 +42,8 @@ final class WebViewViewController: UIViewController {
         
     }
     
+    @IBOutlet private var progressView: UIProgressView!
+    
 }
 
 extension WebViewViewController: WKNavigationDelegate {

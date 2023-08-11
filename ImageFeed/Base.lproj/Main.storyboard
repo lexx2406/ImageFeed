@@ -331,6 +331,9 @@ CiAgICAKA
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="nav_back_button"/>
+                                <connections>
+                                    <action selector="didTapBackButton:" destination="3tj-sn-Q9a" eventType="touchUpInside" id="mBn-Fy-JE2"/>
+                                </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cyb-nA-kcx">
                                 <rect key="frame" x="0.0" y="99" width="393" height="4"/>
@@ -352,6 +355,7 @@ CiAgICAKA
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressView" destination="cyb-nA-kcx" id="EBz-o9-2wy"/>
                         <outlet property="webView" destination="FUJ-Q8-FKb" id="XuH-e3-LyQ"/>
                     </connections>
                 </viewController>
