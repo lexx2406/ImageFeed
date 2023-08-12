@@ -382,6 +382,9 @@ CiAgICAKA
                             <constraint firstItem="jaK-VW-Jha" firstAttribute="centerX" secondItem="qXd-xL-ABu" secondAttribute="centerX" id="qJq-ka-15a"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Umq-Pc-DTK" kind="presentation" identifier="ShowAuthenticationScreen" modalPresentationStyle="fullScreen" id="oET-jf-XF4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUr-oy-3tF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
