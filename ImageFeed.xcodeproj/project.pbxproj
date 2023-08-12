@@ -58,7 +58,6 @@
 		A82E1A2A2A5DBEAC008C54D3 = {
 			isa = PBXGroup;
 			children = (
-				A8C8FA1B2A86FCA500F5CF06 /* SplashViewViewController */,
 				A82E1A352A5DBEAD008C54D3 /* ImageFeed */,
 				A82E1A342A5DBEAD008C54D3 /* Products */,
 			);
@@ -78,6 +77,7 @@
 				A82E1A362A5DBEAD008C54D3 /* AppDelegate.swift */,
 				A82E1A382A5DBEAD008C54D3 /* SceneDelegate.swift */,
 				A8459DBF2A7F0292007CB739 /* Constants.swift */,
+				A8C8FA1B2A86FCA500F5CF06 /* SplashViewViewController */,
 				A8C8FA1A2A86F2ED00F5CF06 /* ServiceAccessLayer */,
 				A882F8632A81770F008A6037 /* Auth */,
 				A88A27972A61EA0500DC459D /* Profile */,
