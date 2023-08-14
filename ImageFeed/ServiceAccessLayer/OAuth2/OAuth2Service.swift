@@ -14,8 +14,10 @@ enum NetworkError: Error {
 }
 
 final class OAuth2Service {
+    
     static let shared = OAuth2Service()
     private let urlSession = URLSession.shared
+    
     private (set) var authToken: String? {
         get {
             return OAuth2TokenStorage().token

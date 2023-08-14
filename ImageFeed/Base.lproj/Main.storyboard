@@ -12,7 +12,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="iSz-RK-ChN">
             <objects>
-                <tabBarController id="vAL-Zt-Yyb" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" id="vAL-Zt-Yyb" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="75k-6p-0iY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -126,7 +126,7 @@
                     <string key="title" base64-UTF8="YES">
 CiAgICAKA
 </string>
-                    <view key="view" contentMode="scaleToFill" id="ai6-lg-TMh" userLabel="Avatar Image View">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="TabBarViewController" id="ai6-lg-TMh" userLabel="Avatar Image View">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="FTG-tW-CLY"/>
