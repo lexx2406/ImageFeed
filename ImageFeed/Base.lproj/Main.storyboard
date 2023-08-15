@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImagesListCell" id="fjI-t2-szQ" customClass="ImagesListCell" customModule="ImageFeed" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImagesListCell" id="fjI-t2-szQ" customClass="ImagesListCell" customModule="ImageFeed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fjI-t2-szQ" id="QEZ-e5-ksq">
@@ -51,7 +51,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="RIO-6T-fsZ" userLabel="Cell Image">
-                                                    <rect key="frame" x="0.0" y="4" width="393" height="216"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="220"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598" y="-239"/>
+            <point key="canvasLocation" x="597.70992366412213" y="-239.43661971830988"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="2Mu-ht-QMN">
@@ -141,11 +141,11 @@ CiAgICAKA
         <!--Navigation Controller-->
         <scene sceneID="pHi-Eg-B68">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZMd-GP-tfs" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E7C-pD-VUN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ZMd-GP-tfs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tab_editorial_active" id="PwD-LH-nN1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mNN-OT-sub">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,7 +158,6 @@ CiAgICAKA
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="M4c-DD-gBB"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E7C-pD-VUN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-550" y="-239"/>
         </scene>
