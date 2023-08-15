@@ -31,13 +31,15 @@ final class OAuth2Service {
         let request = makeRequest(code: code)
         let task = object(for: request) { [weak self] result in
             guard let self = self else { return }
-            switch result {
-            case .success(let body):
-                let authToken = body.accessToken
-                self.authToken = authToken
-                completion(.success(authToken))
-            case .failure(let error):
-                completion(.failure(error))
+            DispatchQueue.main.async {
+                switch result  {
+                case .success(let body):
+                    let authToken = body.accessToken
+                    self.authToken = authToken
+                    completion(.success(authToken))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
         }
         task.resume()
