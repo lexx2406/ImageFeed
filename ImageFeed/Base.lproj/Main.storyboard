@@ -29,7 +29,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6g-1C-XZp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1674" y="-161"/>
+            <point key="canvasLocation" x="-2900" y="-113"/>
         </scene>
         <!--Images List View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="597.70992366412213" y="-239.43661971830988"/>
+            <point key="canvasLocation" x="-1300" y="-113"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="2Mu-ht-QMN">
@@ -136,12 +136,11 @@ CiAgICAKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihn-df-19v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-550" y="635"/>
+            <point key="canvasLocation" x="-2538" y="649"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pHi-Eg-B68">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E7C-pD-VUN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ZMd-GP-tfs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tab_editorial_active" id="PwD-LH-nN1"/>
                     <toolbarItems/>
@@ -158,8 +157,9 @@ CiAgICAKA
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="M4c-DD-gBB"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E7C-pD-VUN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-550" y="-239"/>
+            <point key="canvasLocation" x="-2106" y="-113"/>
         </scene>
         <!--Single Image View Controller-->
         <scene sceneID="sti-65-h1W">
@@ -230,7 +230,7 @@ CiAgICAKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gmg-gt-tes" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1813" y="-239"/>
+            <point key="canvasLocation" x="-453" y="-113"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="Fhr-UI-ARa">
@@ -286,7 +286,7 @@ CiAgICAKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTR-cT-bai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1504.5801526717557" y="-1030.2816901408451"/>
+            <point key="canvasLocation" x="-2105" y="-915"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y91-b5-f5Y">
@@ -304,7 +304,7 @@ CiAgICAKA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCX-Wr-6sf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2431.2977099236641" y="-1030.2816901408451"/>
+            <point key="canvasLocation" x="-2900" y="-915"/>
         </scene>
         <!--Web View View Controller-->
         <scene sceneID="n1U-2v-xdw">
@@ -360,7 +360,7 @@ CiAgICAKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YP-an-B5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-495.41984732824426" y="-1030.2816901408451"/>
+            <point key="canvasLocation" x="-1300" y="-915"/>
         </scene>
         <!--Splash View Controller-->
         <scene sceneID="dfq-iU-GAY">
