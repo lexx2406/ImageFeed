@@ -23,6 +23,7 @@
 		A88B7F9C2A6433A500264D7D /* SingleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B7F9B2A6433A500264D7D /* SingleImageViewController.swift */; };
 		A8C8FA1D2A86FCE900F5CF06 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8FA1C2A86FCE900F5CF06 /* SplashViewController.swift */; };
 		A8CB36EF2A8D6830002E5DC3 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = A8CB36EE2A8D6830002E5DC3 /* ProgressHUD */; };
+		A8E7A55B2A8E315A00F25D03 /* UIBlockingProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E7A55A2A8E315A00F25D03 /* UIBlockingProgressHUD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		A88A27982A61EA2800DC459D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A88B7F9B2A6433A500264D7D /* SingleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageViewController.swift; sourceTree = "<group>"; };
 		A8C8FA1C2A86FCE900F5CF06 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		A8E7A55A2A8E315A00F25D03 /* UIBlockingProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlockingProgressHUD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				A88A27972A61EA0500DC459D /* Profile */,
 				A82E1A4A2A5DF45D008C54D3 /* ImagesList */,
 				A8AEB9D92A64630A000A8955 /* SingleImageView */,
+				A8E7A55C2A8E35E500F25D03 /* UIBlockingProgressHUD */,
 				A82E1A3F2A5DBEAF008C54D3 /* Assets.xcassets */,
 				A82E1A3C2A5DBEAD008C54D3 /* Main.storyboard */,
 				A82E1A412A5DBEAF008C54D3 /* LaunchScreen.storyboard */,
@@ -150,6 +153,14 @@
 				A8C8FA1C2A86FCE900F5CF06 /* SplashViewController.swift */,
 			);
 			path = SplashViewViewController;
+			sourceTree = "<group>";
+		};
+		A8E7A55C2A8E35E500F25D03 /* UIBlockingProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				A8E7A55A2A8E315A00F25D03 /* UIBlockingProgressHUD.swift */,
+			);
+			path = UIBlockingProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +246,7 @@
 				A8C8FA1D2A86FCE900F5CF06 /* SplashViewController.swift in Sources */,
 				A88A27992A61EA2800DC459D /* ProfileViewController.swift in Sources */,
 				A86123002A86EB6D0047D719 /* OAuth2TokenStorage.swift in Sources */,
+				A8E7A55B2A8E315A00F25D03 /* UIBlockingProgressHUD.swift in Sources */,
 				A882F8622A81768E008A6037 /* AuthViewController.swift in Sources */,
 				A82E1A372A5DBEAD008C54D3 /* AppDelegate.swift in Sources */,
 				A88B7F9C2A6433A500264D7D /* SingleImageViewController.swift in Sources */,

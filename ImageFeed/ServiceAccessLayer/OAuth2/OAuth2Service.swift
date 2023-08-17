@@ -18,6 +18,9 @@ final class OAuth2Service {
     static let shared = OAuth2Service()
     private let urlSession = URLSession.shared
     
+    private var task: URLSessionTask?
+    private var lastCode: String?
+    
     private (set) var authToken: String? {
         get {
             return OAuth2TokenStorage().token
@@ -26,8 +29,12 @@ final class OAuth2Service {
             OAuth2TokenStorage().token = newValue
         }
     }
-
+    
     func fetchOAuthToken(_ code: String, completion: @escaping (Result<String, Error>) -> Void) {
+        assert(Thread.isMainThread)
+        if lastCode == code{return}
+        task?.cancel()
+        lastCode = code
         let request = makeRequest(code: code)
         let task = object(for: request) { [weak self] result in
             guard let self = self else { return }
@@ -39,12 +46,17 @@ final class OAuth2Service {
                     completion(.success(authToken))
                 case .failure(let error):
                     completion(.failure(error))
+                    self.task = nil
+                    if error != nil {
+                        self.lastCode = nil
+                    }
                 }
             }
         }
+        self.task = task
         task.resume()
     }
-
+    
     private func makeRequest(code: String) -> URLRequest {
         makeRequest(
             path: "/oauth/token"
@@ -57,13 +69,13 @@ final class OAuth2Service {
             baseURL: URL(string: "https://unsplash.com")!
         )
     }
-
+    
     private struct OAuthTokenResponseBody: Codable {
         let accessToken: String
         let tokenType: String
         let scope: String
         let createdAt: Int
-
+        
         enum CodingKeys: String, CodingKey {
             case accessToken = "access_token"
             case tokenType = "token_type"
@@ -80,7 +92,7 @@ extension OAuth2Service {
                 completion(result)
             }
         }
-
+        
         let task = urlSession.dataTask(with: request, completionHandler: { data, response, error in
             if let data = data, let response = response, let statusCode = (response as? HTTPURLResponse)?.statusCode {
                 if 200 ..< 300 ~= statusCode {
@@ -97,7 +109,7 @@ extension OAuth2Service {
         task.resume()
         return task
     }
-
+    
     private func object(for request: URLRequest, completion: @escaping (Result<OAuthTokenResponseBody, Error>) -> Void) -> URLSessionTask {
         let decoder = JSONDecoder()
         return data(for: request) { (result: Result<Data, Error>) in
