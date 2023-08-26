@@ -9,10 +9,13 @@ import UIKit
 import ProgressHUD
 
 final class SplashViewController: UIViewController {
+    
     private let ShowAuthenticationScreenSegueIdentifier = "ShowAuthenticationScreen"
     private let oauth2Service = OAuth2Service()
     private let oauth2TokenStorage = OAuth2TokenStorage()
     private let profileService = ProfileService.shared
+    private let alertPresenter = AlertPresenter()
+    private let profileImageService = ProfileImageService.shared
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -83,20 +86,18 @@ extension SplashViewController: AuthViewControllerDelegate {
             switch result {
             case .success:
                 guard let username = self.profileService.profile?.userName else { return }
-                // self.profileImageService.fetchProfileImageURL(username: username)  { _ in }
+                self.profileImageService.fetchProfileImageURL(username: username)  { _ in }
                 DispatchQueue.main.async {
                     self.switchToTabBarController()
                 }
                 UIBlockingProgressHUD.dismiss()
             case .failure:
                 DispatchQueue.main.async {
-                    /*
                     self.alertPresenter.showAlert(in: self, with: AlertModel(
                         title: "Что-то пошло не так",
                         message: "Не удалось войти в систему",
                         buttonText: "OK", completion: nil),
                                                   erorr: nil)
-                     */
                 }
             }
         }

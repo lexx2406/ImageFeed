@@ -131,6 +131,7 @@ final class ProfileViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    
     private func cleanServicesData() {
         ImagesListService.shared.clean()
         ProfileService.shared.clean()
@@ -138,13 +139,15 @@ final class ProfileViewController: UIViewController {
     }
     
 }
-
-extension ProfileViewController {
-    private func updateProfileDetails(profile: ProfileService.Profile?) {
-        guard let profile = profileService.profile else { return }
-        nameLabel.text = profile.name
-        loginNameLabel.text = profile.loginName
-        descriptionLabel.text = profile.bio
+    
+    extension ProfileViewController {
+        private func updateProfileDetails(profile: ProfileService.Profile?) {
+            guard let profile = profileService.profile else { return }
+            nameLabel.text = profile.name
+            loginNameLabel.text = profile.loginName
+            descriptionLabel.text = profile.bio
+        }
     }
-}
-
+    
+    
+   
