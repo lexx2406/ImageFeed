@@ -11,6 +11,7 @@ final class ProfileService {
     
     private(set) var profile: Profile?
     private var task: URLSessionTask?
+    static let shared = ProfileService()
     
     struct ProfileResult: Codable {
         let username: String
