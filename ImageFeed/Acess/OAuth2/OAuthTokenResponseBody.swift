@@ -21,4 +21,3 @@ struct OAuthTokenResponseBody: Decodable {
     let createdAt: Int
 }
 
-

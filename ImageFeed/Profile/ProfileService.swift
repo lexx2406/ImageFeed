@@ -5,40 +5,16 @@
 //  Created by Алексей Налимов on 26.08.2023.
 //
 
-import Foundation
+import UIKit
 
 final class ProfileService {
-    
+    static let shared = ProfileService()
     private(set) var profile: Profile?
     private var task: URLSessionTask?
-    static let shared = ProfileService()
+    private let urlSession = URLSession.shared
     
-    struct ProfileResult: Codable {
-        let username: String
-        let first_name: String
-        let last_name: String?
-        let bio: String?
-        
-        enum CodingKeys: String, CodingKey {
-            case username = "username"
-            case first_name = "first_name"
-            case last_name = "last_name"
-            case bio = "bio"
-        }
-    }
-    
-    struct Profile: Codable {
-        var userName: String
-        var name: String
-        var loginName: String
-        var bio: String?
-        
-        init(data: ProfileResult) {
-            self.userName = data.username
-            self.name = (data.first_name) + " " + (data.last_name ?? "")
-            self.loginName = "@" + (data.username)
-            self.bio = data.bio
-        }
+    private enum NetworkError: Error {
+        case codeError
     }
     
     func fetchProfile(_ token: String, completion: @escaping (Result<Profile, Error>) -> Void) {
@@ -66,12 +42,33 @@ final class ProfileService {
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return request
     }
+}
+
+
+struct ProfileResult: Codable {
+    let username: String
+    let firstName: String
+    let lastName: String?
+    let bio: String?
     
-    func clean() {
-        profile = nil
-        task?.cancel()
-        task = nil
+    enum CodingKeys: String, CodingKey {
+        case username = "username"
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case bio = "bio"
     }
 }
-        
-        
+
+struct Profile: Codable {
+    var userName: String
+    var name: String
+    var loginName: String
+    var bio: String?
+    
+    init(data: ProfileResult) {
+        self.userName = data.username
+        self.name = (data.firstName) + " " + (data.lastName ?? "")
+        self.loginName = "@" + (data.username)
+        self.bio = data.bio
+    }
+}
