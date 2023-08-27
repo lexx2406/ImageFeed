@@ -15,7 +15,6 @@ final class SingleImageViewController: UIViewController {
             rescaleAndCenterImageInScrollView(image: image)
         }
     }
-    
     @IBOutlet private var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -29,7 +28,6 @@ final class SingleImageViewController: UIViewController {
     @IBAction private func didTapBackButton() {
         dismiss(animated: true, completion: nil)
     }
-    
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func didTapShareButton(_ sender: UIButton) {
@@ -62,3 +60,5 @@ extension SingleImageViewController: UIScrollViewDelegate {
         imageView
     }
 }
+
+    
