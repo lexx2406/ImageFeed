@@ -5,7 +5,7 @@
 //  Created by Алексей Налимов on 26.08.2023.
 //
 
-iimport UIKit
+import UIKit
 
 private enum NTW: Error {
     case codeError
