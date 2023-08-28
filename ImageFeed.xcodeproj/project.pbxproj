@@ -16,6 +16,8 @@
 		A82E1A4C2A5DF490008C54D3 /* ImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82E1A4B2A5DF490008C54D3 /* ImagesListCell.swift */; };
 		A82E441D2A82E74C00D15BE6 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82E441C2A82E74C00D15BE6 /* WebViewViewController.swift */; };
 		A8459DC02A7F0292007CB739 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8459DBF2A7F0292007CB739 /* Constants.swift */; };
+		A8553AEF2A9D2DAF00D333F1 /* ImageListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8553AEE2A9D2DAF00D333F1 /* ImageListModels.swift */; };
+		A8553AF12A9D2E9900D333F1 /* ProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8553AF02A9D2E9900D333F1 /* ProfileModels.swift */; };
 		A86122FE2A86E75D0047D719 /* OAuth2Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86122FD2A86E75D0047D719 /* OAuth2Service.swift */; };
 		A86123002A86EB6D0047D719 /* OAuth2TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86122FF2A86EB6D0047D719 /* OAuth2TokenStorage.swift */; };
 		A882F8622A81768E008A6037 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A882F8612A81768E008A6037 /* AuthViewController.swift */; };
@@ -49,6 +51,8 @@
 		A82E1A4B2A5DF490008C54D3 /* ImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCell.swift; sourceTree = "<group>"; };
 		A82E441C2A82E74C00D15BE6 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		A8459DBF2A7F0292007CB739 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A8553AEE2A9D2DAF00D333F1 /* ImageListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListModels.swift; sourceTree = "<group>"; };
+		A8553AF02A9D2E9900D333F1 /* ProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModels.swift; sourceTree = "<group>"; };
 		A86122FD2A86E75D0047D719 /* OAuth2Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Service.swift; sourceTree = "<group>"; };
 		A86122FF2A86EB6D0047D719 /* OAuth2TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2TokenStorage.swift; sourceTree = "<group>"; };
 		A882F8612A81768E008A6037 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 		A82E1A352A5DBEAD008C54D3 /* ImageFeed */ = {
 			isa = PBXGroup;
 			children = (
+				A8553AED2A9D2D5700D333F1 /* Models */,
 				A886BAA62A9AA3FA007A3BB1 /* TapBarController */,
 				A886BAA32A9AA383007A3BB1 /* Alert */,
 				A886BA9D2A99A58D007A3BB1 /* Helpers */,
@@ -124,6 +129,15 @@
 				A886BAAD2A9AA6D7007A3BB1 /* ImageListService.swift */,
 			);
 			path = ImagesList;
+			sourceTree = "<group>";
+		};
+		A8553AED2A9D2D5700D333F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A8553AEE2A9D2DAF00D333F1 /* ImageListModels.swift */,
+				A8553AF02A9D2E9900D333F1 /* ProfileModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A86122FC2A86E6F60047D719 /* OAuth2 */ = {
@@ -294,8 +308,10 @@
 				A8459DC02A7F0292007CB739 /* Constants.swift in Sources */,
 				A82E1A3B2A5DBEAD008C54D3 /* ImagesListViewController.swift in Sources */,
 				A886BAAE2A9AA6D7007A3BB1 /* ImageListService.swift in Sources */,
+				A8553AF12A9D2E9900D333F1 /* ProfileModels.swift in Sources */,
 				A886BA9F2A99A5A7007A3BB1 /* URLSession.swift in Sources */,
 				A886BAAC2A9AA5ED007A3BB1 /* ApertPresenter.swift in Sources */,
+				A8553AEF2A9D2DAF00D333F1 /* ImageListModels.swift in Sources */,
 				A886BAA52A9AA3A7007A3BB1 /* AlertModel.swift in Sources */,
 				A82E1A4C2A5DF490008C54D3 /* ImagesListCell.swift in Sources */,
 				A8C8FA1D2A86FCE900F5CF06 /* SplashViewController.swift in Sources */,

@@ -10,7 +10,6 @@ import UIKit
 final class OAuth2Service {
     
     static private let shared = OAuth2Service()
-    private init() {}
     private let urlSession = URLSession.shared
     private let tokenStorage = OAuth2TokenStorage.shared
     private var task: URLSessionTask?

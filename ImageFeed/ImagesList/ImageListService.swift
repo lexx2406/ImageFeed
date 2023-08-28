@@ -7,51 +7,6 @@
 
 import UIKit
 
-struct LikePhotoResult: Decodable {
-    let photo: PhotoResult?
-}
-
-struct Photo {
-    let id: String
-    let width: CGFloat
-    let height: CGFloat
-    let createdAt: Date?
-    let welcomeDescription: String?
-    let thumbImageURL: String?
-    let largeImageURL: String?
-    let isLiked: Bool
-}
-
-struct PhotoResult: Decodable {
-    let id: String
-    let createdAt: String?
-    let welcomeDescription: String?
-    let isLiked: Bool?
-    let urls: UrlsResult?
-    let width: CGFloat
-    let height: CGFloat
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case createdAt = "created_at"
-        case welcomeDescription = "description"
-        case isLiked = "liked_by_user"
-        case urls = "urls"
-        case width = "width"
-        case height = "height"
-    }
-}
-
-struct UrlsResult: Decodable {
-    let thumbImageURL: String?
-    let largeImageURL: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case thumbImageURL = "thumb"
-        case largeImageURL = "full"
-    }
-}
-
 final class ImagesListService {
     private (set) var photos: [Photo] = []
     private var lastLoadedPage: Int?
@@ -92,29 +47,6 @@ final class ImagesListService {
         }
         self.task = task
         task.resume()
-    }
-    
-    private func photoRequest(page: String, perPage: String) -> URLRequest? {
-        guard let url = URL(string: "https://api.unsplash.com") else { return nil }
-        var request = URLRequest.makeHTTPRequest(
-            path: "/photos?page=\(page)&&per_page=\(perPage)",
-            httpMethod: "GET",
-            baseURL: url)
-        if let token = OAuth2TokenStorage().token {
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
-        return request
-    }
-    
-    private func convert(_ photoResult: PhotoResult) -> Photo {
-        Photo(id: photoResult.id,
-              width: CGFloat(photoResult.width),
-              height: CGFloat(photoResult.height),
-              createdAt: self.dateFormatter.date(from:photoResult.createdAt ?? ""),
-              welcomeDescription: photoResult.welcomeDescription,
-              thumbImageURL: photoResult.urls?.thumbImageURL,
-              largeImageURL: photoResult.urls?.largeImageURL,
-              isLiked: photoResult.isLiked ?? false)
     }
     
     func updatePhotos(_ photos: [Photo]) {
@@ -169,8 +101,33 @@ final class ImagesListService {
         self.task = task
         task.resume()
     }
+}
+
+private extension ImagesListService {
     
-    private func postLikeRequest(_ token: String, photoId: String) -> URLRequest? {
+    func photoRequest(page: String, perPage: String) -> URLRequest? {
+        guard let url = URL(string: "https://api.unsplash.com") else { return nil }
+        var request = URLRequest.makeHTTPRequest(
+            path: "/photos?page=\(page)&&per_page=\(perPage)",
+            httpMethod: "GET",
+            baseURL: url)
+        if let token = OAuth2TokenStorage().token {
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+        return request
+    }
+    
+   func convert(_ photoResult: PhotoResult) -> Photo {
+        Photo(id: photoResult.id,
+              width: CGFloat(photoResult.width),
+              height: CGFloat(photoResult.height),
+              createdAt: self.dateFormatter.date(from:photoResult.createdAt ?? ""),
+              welcomeDescription: photoResult.welcomeDescription,
+              thumbImageURL: photoResult.urls?.thumbImageURL,
+              largeImageURL: photoResult.urls?.largeImageURL,
+              isLiked: photoResult.isLiked ?? false)
+    }
+   func postLikeRequest(_ token: String, photoId: String) -> URLRequest? {
         var requestPost = URLRequest.makeHTTPRequest(
             path: "photos/\(photoId)/like",
             httpMethod: "POST",
@@ -179,12 +136,12 @@ final class ImagesListService {
         return requestPost
     }
     
-    private func withReplaced(itemAt: Int, newValue: Photo) -> [Photo] {
+    func withReplaced(itemAt: Int, newValue: Photo) -> [Photo] {
         photos.replaceSubrange(itemAt...itemAt, with: [newValue])
         return photos
     }
     
-    private func deleteLikeRequest(_ token: String, photoId: String) -> URLRequest? {
+    func deleteLikeRequest(_ token: String, photoId: String) -> URLRequest? {
         var requestDelete = URLRequest.makeHTTPRequest(
             path: "photos/\(photoId)/like",
             httpMethod: "DELETE",
