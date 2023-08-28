@@ -86,11 +86,11 @@ extension SplashViewController: AuthViewControllerDelegate {
                 self.oauth2TokenStorage.token = token
                 self.fetchProfile(token: token)
             case .failure:
-                self.alertPresenter.showAlert(in: self, with: AlertModel(
+                    self.alertPresenter.showAlert(in: self, with: AlertModel(
                     title: "Что-то пошло не так",
                     message: "Не удалось войти в систему",
                     buttonText: "OK", completion: nil),
-                                         erorr: Error.self as! Error)
+                                         erorr: nil)
             }
             UIBlockingProgressHUD.dismiss()
         }
@@ -108,11 +108,13 @@ extension SplashViewController: AuthViewControllerDelegate {
                 }
                 UIBlockingProgressHUD.dismiss()
             case .failure:
-                self.alertPresenter.showAlert(in: self, with: AlertModel(
-                    title: "Что-то пошло не так",
-                    message: "Не удалось войти в систему",
-                    buttonText: "OK", completion: nil),
-                                         erorr: Error.self as! Error)
+                    DispatchQueue.main.async {
+                        self.alertPresenter.showAlert(in: self, with: AlertModel(
+                            title: "Что-то пошло не так",
+                            message: "Не удалось войти в систему",
+                            buttonText: "OK", completion: nil),
+                                                      erorr: nil)
+                }
             }
         }
     }
