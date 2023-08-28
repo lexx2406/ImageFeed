@@ -175,8 +175,8 @@
 		A886BAA32A9AA383007A3BB1 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				A886BAA42A9AA3A7007A3BB1 /* AlertModel.swift */,
 				A886BAAB2A9AA5ED007A3BB1 /* ApertPresenter.swift */,
+				A886BAA42A9AA3A7007A3BB1 /* AlertModel.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";

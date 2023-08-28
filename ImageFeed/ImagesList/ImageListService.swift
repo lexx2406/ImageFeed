@@ -14,7 +14,7 @@ final class ImagesListService {
     private var task: URLSessionTask?
     static let DidChangeNotification = Notification.Name(rawValue: "ImagesListServiceDidChange")
     static let shared = ImagesListService()
-    private let storageToken = OAuth2TokenStorage()
+    private let storageToken = OAuth2TokenStorage.shared
     private let dateFormatter = ISO8601DateFormatter()
     
     func fetchPhotosNextPage() {
@@ -111,7 +111,7 @@ private extension ImagesListService {
             path: "/photos?page=\(page)&&per_page=\(perPage)",
             httpMethod: "GET",
             baseURL: url)
-        if let token = OAuth2TokenStorage().token {
+        if let token = storageToken.token {
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
         return request

@@ -8,10 +8,10 @@
 import Foundation
 import SwiftKeychainWrapper
 
-final class OAuth2TokenStorage { 
+final class OAuth2TokenStorage {
     
-    private let keychain = KeychainWrapper.standard
     static let shared = OAuth2TokenStorage()
+    private let keychain = KeychainWrapper.standard
     
     var token: String? {
         get {
@@ -23,6 +23,10 @@ final class OAuth2TokenStorage {
             } else {
                 keychain.removeObject(forKey: "token")
             }
+            
         }
     }
+    
+    private init() { }
+    
 }
