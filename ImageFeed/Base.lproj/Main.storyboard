@@ -222,7 +222,7 @@
                     <navigationItem key="navigationItem" id="XGJ-0e-eeG"/>
                     <connections>
                         <outlet property="tableView" destination="BTg-gQ-VnR" id="l6B-Uz-dcS"/>
-                        <segue destination="9hM-0q-WJf" kind="presentation" identifier="ShowSingleImage" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="NU6-66-Wka"/>
+                        <segue destination="9hM-0q-WJf" kind="presentation" identifier="ShowSingleImage" modalPresentationStyle="fullScreen" id="NU6-66-Wka"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -232,7 +232,7 @@
         <!--Single Image View Controller-->
         <scene sceneID="rOK-7k-7Tv">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="9hM-0q-WJf" customClass="SingleImageViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="9hM-0q-WJf" customClass="SingleImageViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="dxW-si-8Dd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -243,11 +243,12 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="Urt-vC-q2J"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="EC7-R9-0Eq"/>
                             </scrollView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="AHk-H7-yJB" userLabel="ImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="AHk-H7-yJB" userLabel="ImageView">
+                                <rect key="frame" x="0.0" y="213" width="414" height="436"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9V-Mr-kJR">
-                                <rect key="frame" x="8" y="0.0" width="48" height="48"/>
+                                <rect key="frame" x="8" y="56" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="65n-pM-cpp"/>
                                     <constraint firstAttribute="width" constant="48" id="8Vq-gg-ksz"/>
@@ -275,14 +276,14 @@
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="AHk-H7-yJB" firstAttribute="bottom" secondItem="dxW-si-8Dd" secondAttribute="bottom" id="7Qq-Nm-htJ"/>
-                            <constraint firstItem="6eX-zx-UeR" firstAttribute="centerX" secondItem="dxW-si-8Dd" secondAttribute="centerX" id="9Ew-5J-7g7"/>
-                            <constraint firstItem="AHk-H7-yJB" firstAttribute="top" secondItem="dxW-si-8Dd" secondAttribute="top" id="COG-P7-yPD"/>
-                            <constraint firstItem="D9V-Mr-kJR" firstAttribute="top" secondItem="dxW-si-8Dd" secondAttribute="top" id="FhT-3E-zD1" userLabel="Button.top = Safe Area.top + 8"/>
-                            <constraint firstItem="AHk-H7-yJB" firstAttribute="trailing" secondItem="dxW-si-8Dd" secondAttribute="trailing" id="Sxy-yc-7cL"/>
-                            <constraint firstItem="D9V-Mr-kJR" firstAttribute="leading" secondItem="JaR-fh-d9p" secondAttribute="leading" constant="8" id="VZy-6q-TC1"/>
-                            <constraint firstItem="JaR-fh-d9p" firstAttribute="bottom" secondItem="6eX-zx-UeR" secondAttribute="bottom" constant="36" id="oDh-dj-N9M"/>
-                            <constraint firstItem="AHk-H7-yJB" firstAttribute="leading" secondItem="dxW-si-8Dd" secondAttribute="leading" id="qhG-rj-lDv"/>
+                            <constraint firstItem="AHk-H7-yJB" firstAttribute="trailing" secondItem="dxW-si-8Dd" secondAttribute="trailing" id="5ZQ-Oq-YcG"/>
+                            <constraint firstItem="JaR-fh-d9p" firstAttribute="bottom" secondItem="6eX-zx-UeR" secondAttribute="bottom" constant="36" id="G9P-8S-Dh5"/>
+                            <constraint firstItem="AHk-H7-yJB" firstAttribute="leading" secondItem="dxW-si-8Dd" secondAttribute="leading" id="SJI-5r-sAc"/>
+                            <constraint firstItem="AHk-H7-yJB" firstAttribute="top" secondItem="dxW-si-8Dd" secondAttribute="top" id="edp-bp-HVb"/>
+                            <constraint firstItem="6eX-zx-UeR" firstAttribute="centerX" secondItem="JaR-fh-d9p" secondAttribute="centerX" id="eew-nm-rJl"/>
+                            <constraint firstItem="AHk-H7-yJB" firstAttribute="bottom" secondItem="dxW-si-8Dd" secondAttribute="bottom" id="nmQ-s8-9qP"/>
+                            <constraint firstItem="D9V-Mr-kJR" firstAttribute="leading" secondItem="JaR-fh-d9p" secondAttribute="leading" constant="8" id="tB4-gG-D6i"/>
+                            <constraint firstItem="D9V-Mr-kJR" firstAttribute="top" secondItem="JaR-fh-d9p" secondAttribute="top" constant="8" id="yQD-nh-CqM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KTe-3f-H85"/>
@@ -298,10 +299,9 @@
         <!--Navigation Controller-->
         <scene sceneID="eyP-N6-4mf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="81n-a4-Wnh" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="81n-a4-Wnh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eC4-Yr-X3o">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
