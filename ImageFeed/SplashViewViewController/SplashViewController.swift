@@ -37,7 +37,7 @@ final class SplashViewController: UIViewController {
             self.present(authViewController, animated: true)
         }
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
@@ -86,11 +86,11 @@ extension SplashViewController: AuthViewControllerDelegate {
                 self.oauth2TokenStorage.token = token
                 self.fetchProfile(token: token)
             case .failure:
-                    self.alertPresenter.showAlert(in: self, with: AlertModel(
+                self.alertPresenter.showAlert(in: self, with: AlertModel(
                     title: "Что-то пошло не так",
                     message: "Не удалось войти в систему",
                     buttonText: "OK", completion: nil),
-                                         erorr: nil)
+                                              erorr: nil)
             }
             UIBlockingProgressHUD.dismiss()
         }
@@ -108,12 +108,12 @@ extension SplashViewController: AuthViewControllerDelegate {
                 }
                 UIBlockingProgressHUD.dismiss()
             case .failure:
-                    DispatchQueue.main.async {
-                        self.alertPresenter.showAlert(in: self, with: AlertModel(
-                            title: "Что-то пошло не так",
-                            message: "Не удалось войти в систему",
-                            buttonText: "OK", completion: nil),
-                                                      erorr: nil)
+                DispatchQueue.main.async {
+                    self.alertPresenter.showAlert(in: self, with: AlertModel(
+                        title: "Что-то пошло не так",
+                        message: "Не удалось войти в систему",
+                        buttonText: "OK", completion: nil),
+                                                  erorr: nil)
                 }
             }
         }

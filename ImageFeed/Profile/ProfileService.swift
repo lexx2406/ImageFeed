@@ -24,12 +24,12 @@ final class ProfileService {
         let session = URLSession.shared
         let task = session.objectTask(for: request) { [weak self] (result: Result<ProfileResult, Error>) in
             switch result {
-                case .success(let decodedObject):
-                    let profile = Profile(data: decodedObject)
-                    self?.profile = profile
-                    completion(.success(profile))
-                case .failure(let error):
-                    completion(.failure(error))
+            case .success(let decodedObject):
+                let profile = Profile(data: decodedObject)
+                self?.profile = profile
+                completion(.success(profile))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
         self.task = task

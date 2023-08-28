@@ -20,18 +20,18 @@ final class ImagesListViewController: UIViewController {
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            guard segue.identifier == ShowSingleImageSegueIdentifier,
-                  let viewController = segue.destination as? SingleImageViewController,
-                  let indexPath = sender as? IndexPath else {
-                super.prepare(for: segue, sender: sender)
-                return
-            }
-            let image = UIImage(named: photosName[indexPath.row])
-            viewController.image = image
+        guard segue.identifier == ShowSingleImageSegueIdentifier,
+              let viewController = segue.destination as? SingleImageViewController,
+              let indexPath = sender as? IndexPath else {
+            super.prepare(for: segue, sender: sender)
+            return
         }
-
+        let image = UIImage(named: photosName[indexPath.row])
+        viewController.image = image
+    }
+    
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
