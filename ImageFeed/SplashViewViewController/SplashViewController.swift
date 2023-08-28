@@ -55,7 +55,7 @@ final class SplashViewController: UIViewController {
     }
     
     private func setUpUI() {
-        view.backgroundColor = .black
+        view.backgroundColor = .ypBlack
         view.addSubview(splashUIImageView)
         splashUIImageView.image = UIImage(named: "splash_screen_logo")
         splashUIImageView.translatesAutoresizingMaskIntoConstraints = false

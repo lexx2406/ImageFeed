@@ -56,7 +56,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ki9-Dy-pie"/>
-                        <color key="backgroundColor" name="YP Black"/>
+                        <color key="backgroundColor" name="ypBlack"/>
                         <constraints>
                             <constraint firstItem="Ki9-Dy-pie" firstAttribute="bottom" secondItem="ReN-GX-4LZ" secondAttribute="bottom" constant="124" id="6lg-nW-KUf"/>
                             <constraint firstItem="2hN-Hy-lfR" firstAttribute="centerY" secondItem="YjQ-2g-TGY" secondAttribute="centerY" id="7jJ-oj-Li3"/>
@@ -232,76 +232,74 @@
         <!--Single Image View Controller-->
         <scene sceneID="rOK-7k-7Tv">
             <objects>
-                <viewController wantsFullScreenLayout="YES" id="9hM-0q-WJf" customClass="SingleImageViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="dxW-si-8Dd">
+                <viewController modalPresentationStyle="fullScreen" id="9hM-0q-WJf" customClass="SingleImageViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9vU-se-lfn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hP-00-dBf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="414" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="oSx-7q-RPK" userLabel="Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QHc-s3-eaX">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="Urt-vC-q2J"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="EC7-R9-0Eq"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="lEr-NT-Lrg"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="dHR-6I-ODL"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9hM-0q-WJf" id="dpz-gd-Wrf"/>
+                                </connections>
                             </scrollView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="AHk-H7-yJB" userLabel="ImageView">
-                                <rect key="frame" x="0.0" y="213" width="414" height="436"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9V-Mr-kJR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwO-hB-dZl">
                                 <rect key="frame" x="8" y="56" width="48" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="65n-pM-cpp"/>
-                                    <constraint firstAttribute="width" constant="48" id="8Vq-gg-ksz"/>
+                                    <constraint firstAttribute="width" constant="48" id="AgC-5M-XgG"/>
+                                    <constraint firstAttribute="height" constant="48" id="P9w-1Y-VAL"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="nav_back_button"/>
                                 <connections>
-                                    <action selector="didTapBackButton" destination="9hM-0q-WJf" eventType="touchUpInside" id="nZZ-lR-va3"/>
+                                    <action selector="didTapBackButton" destination="9hM-0q-WJf" eventType="touchUpInside" id="wbd-fo-IuT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eX-zx-UeR" userLabel="Sharing">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3A-HC-sZX" userLabel="Share Button">
                                 <rect key="frame" x="182" y="776" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="GWn-FL-e3H"/>
-                                    <constraint firstAttribute="width" constant="50" id="JZR-qB-MGz"/>
-                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="share_button"/>
                                 <connections>
-                                    <action selector="didTapShareButton:" destination="9hM-0q-WJf" eventType="touchUpInside" id="Mhg-An-YER"/>
+                                    <action selector="didTapShareButton:" destination="9hM-0q-WJf" eventType="touchUpInside" id="OVw-5t-8po"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="JaR-fh-d9p"/>
-                        <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fU7-I0-b4N"/>
+                        <color key="backgroundColor" name="YP Black"/>
                         <constraints>
-                            <constraint firstItem="AHk-H7-yJB" firstAttribute="trailing" secondItem="dxW-si-8Dd" secondAttribute="trailing" id="5ZQ-Oq-YcG"/>
-                            <constraint firstItem="JaR-fh-d9p" firstAttribute="bottom" secondItem="6eX-zx-UeR" secondAttribute="bottom" constant="36" id="G9P-8S-Dh5"/>
-                            <constraint firstItem="AHk-H7-yJB" firstAttribute="leading" secondItem="dxW-si-8Dd" secondAttribute="leading" id="SJI-5r-sAc"/>
-                            <constraint firstItem="AHk-H7-yJB" firstAttribute="top" secondItem="dxW-si-8Dd" secondAttribute="top" id="edp-bp-HVb"/>
-                            <constraint firstItem="6eX-zx-UeR" firstAttribute="centerX" secondItem="JaR-fh-d9p" secondAttribute="centerX" id="eew-nm-rJl"/>
-                            <constraint firstItem="AHk-H7-yJB" firstAttribute="bottom" secondItem="dxW-si-8Dd" secondAttribute="bottom" id="nmQ-s8-9qP"/>
-                            <constraint firstItem="D9V-Mr-kJR" firstAttribute="leading" secondItem="JaR-fh-d9p" secondAttribute="leading" constant="8" id="tB4-gG-D6i"/>
-                            <constraint firstItem="D9V-Mr-kJR" firstAttribute="top" secondItem="JaR-fh-d9p" secondAttribute="top" constant="8" id="yQD-nh-CqM"/>
+                            <constraint firstItem="GwO-hB-dZl" firstAttribute="leading" secondItem="fU7-I0-b4N" secondAttribute="leading" constant="8" id="H31-Qp-0f7"/>
+                            <constraint firstItem="x3A-HC-sZX" firstAttribute="centerX" secondItem="9vU-se-lfn" secondAttribute="centerX" id="JIw-FV-STD"/>
+                            <constraint firstItem="GwO-hB-dZl" firstAttribute="top" secondItem="fU7-I0-b4N" secondAttribute="top" constant="8" id="LnD-hK-nTn"/>
+                            <constraint firstItem="oSx-7q-RPK" firstAttribute="leading" secondItem="9vU-se-lfn" secondAttribute="leading" id="Lxo-Qo-xDG"/>
+                            <constraint firstItem="oSx-7q-RPK" firstAttribute="trailing" secondItem="9vU-se-lfn" secondAttribute="trailing" id="PbP-mB-h17"/>
+                            <constraint firstItem="fU7-I0-b4N" firstAttribute="bottom" secondItem="x3A-HC-sZX" secondAttribute="bottom" constant="36" id="Tav-yM-HwB"/>
+                            <constraint firstItem="oSx-7q-RPK" firstAttribute="top" secondItem="9vU-se-lfn" secondAttribute="top" id="X1t-2F-YeU"/>
+                            <constraint firstItem="oSx-7q-RPK" firstAttribute="bottom" secondItem="9vU-se-lfn" secondAttribute="bottom" id="alx-29-TdF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KTe-3f-H85"/>
                     <connections>
-                        <outlet property="imageView" destination="AHk-H7-yJB" id="84s-0Y-9Nw"/>
-                        <outlet property="scrollView" destination="9hP-00-dBf" id="Ls2-yo-ZH5"/>
+                        <outlet property="imageView" destination="oSx-7q-RPK" id="sJ8-aU-V7X"/>
+                        <outlet property="scrollView" destination="QHc-s3-eaX" id="lSw-jD-cUG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4KI-fm-Ecg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-368.11594202898556" y="-408.48214285714283"/>
+            <point key="canvasLocation" x="-368" y="-408"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eyP-N6-4mf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="81n-a4-Wnh" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="81n-a4-Wnh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eC4-Yr-X3o">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -330,6 +328,9 @@
         </namedColor>
         <namedColor name="YP White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ypBlack">
+            <color red="0.10199999809265137" green="0.10599999874830246" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
