@@ -8,7 +8,7 @@
 import Foundation
 import SwiftKeychainWrapper
 
-final class OAuth2TokenStorage { // интерфейс для сохранения и извлечения OAuth2-токена из Keychain
+final class OAuth2TokenStorage { 
     
     private let keychain = KeychainWrapper.standard
     static let shared = OAuth2TokenStorage()

@@ -42,19 +42,19 @@ final class SingleImageViewController: UIViewController {
             case .success(let imageResult):
                 self.rescaleAndCenterImageInScrollView(image: imageResult.image)
             case .failure:
-                    self.alert.showAlert(in: self, with: AlertModel(
+                self.alert.showAlert(in: self, with: AlertModel(
                     title: "Что-то пошло не так(",
                     message: "Не удалось войти в систему",
                     buttonText: "OK",
                     completion:  { action in
                         self.setImage()}
                 ),
-                                erorr: nil)
+                                     erorr: nil)
             }
             UIBlockingProgressHUD.dismiss()
         }
     }
-
+    
     @IBAction private func didTapBackButton() {
         dismiss(animated: true, completion: nil)
     }
@@ -68,16 +68,16 @@ final class SingleImageViewController: UIViewController {
 }
 
 extension SingleImageViewController: UIScrollViewDelegate {
-        func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-            imageView
-        }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        imageView
+    }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
         let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
         let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
         scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
     }
-
+    
     private func rescaleAndCenterImageInScrollView(image: UIImage) {
         let minZoomScale = scrollView.minimumZoomScale
         let maxZoomScale = scrollView.maximumZoomScale
@@ -95,4 +95,4 @@ extension SingleImageViewController: UIScrollViewDelegate {
         scrollView.setContentOffset(CGPoint(x: x, y: y), animated: false)
     }
 }
-    
+

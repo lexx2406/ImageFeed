@@ -41,7 +41,23 @@ final class ProfileViewController: UIViewController {
         updateAvatar()
     }
     
-    private func configView() {
+    @objc
+    private func didTapButton() {
+        showLogoutAlert()
+    }
+}
+
+extension ProfileViewController {
+    private func updateProfileDetails(profile: Profile?) {
+        guard let profile = profileService.profile else { return }
+        nameLabel.text = profile.name
+        loginNameLabel.text = profile.loginName
+        descriptionLabel.text = profile.bio
+    }
+}
+
+private extension ProfileViewController {
+    func configView() {
         view.addSubview(avatar)
         view.addSubview(nameLabel)
         view.addSubview(loginNameLabel)
@@ -63,7 +79,7 @@ final class ProfileViewController: UIViewController {
         
     }
     
-    private func makeConstraints() {
+    func makeConstraints() {
         avatar.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         loginNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -86,7 +102,7 @@ final class ProfileViewController: UIViewController {
         ])
     }
     
-    private func updateAvatar() {
+    func updateAvatar() {
         guard
             let profileImageURL = ProfileImageService.shared.avatarURL,
             let url = URL(string: profileImageURL)
@@ -101,12 +117,7 @@ final class ProfileViewController: UIViewController {
         cache.clearMemoryCache()
     }
     
-    @objc
-    private func didTapButton() {
-        showLogoutAlert()
-    }
-    
-    private func logout() {
+    func logout() {
         storageToken.clearToken()
         WebViewViewController.clean()
         cleanServicesData()
@@ -116,7 +127,7 @@ final class ProfileViewController: UIViewController {
         window.rootViewController = SplashViewController()
     }
     
-    private func showLogoutAlert() {
+    func showLogoutAlert() {
         let alert = UIAlertController(
             title: "Пока, пока!",
             message: "Уверены что хотите выйти?",
@@ -130,19 +141,9 @@ final class ProfileViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    private func cleanServicesData() {
+    func cleanServicesData() {
         ImagesListService.shared.clean()
         ProfileService.shared.clean()
         ProfileImageService.shared.clean()
     }
 }
-
-extension ProfileViewController {
-    private func updateProfileDetails(profile: Profile?) {
-        guard let profile = profileService.profile else { return }
-        nameLabel.text = profile.name
-        loginNameLabel.text = profile.loginName
-        descriptionLabel.text = profile.bio
-    }
-}
-
