@@ -87,7 +87,7 @@ extension SplashViewController: AuthViewControllerDelegate {
                 self.fetchProfile(token: token)
             case .failure:
                 self.alertPresenter.showAlert(in: self, with: AlertModel(
-                    title: "Что-то пошло не так",
+                    title: "Что-то пошло не так(",
                     message: "Не удалось войти в систему",
                     buttonText: "OK", completion: nil),
                                               erorr: nil)
@@ -110,7 +110,7 @@ extension SplashViewController: AuthViewControllerDelegate {
             case .failure:
                 DispatchQueue.main.async {
                     self.alertPresenter.showAlert(in: self, with: AlertModel(
-                        title: "Что-то пошло не так",
+                        title: "Что-то пошло не так(",
                         message: "Не удалось войти в систему",
                         buttonText: "OK", completion: nil),
                                                   erorr: nil)

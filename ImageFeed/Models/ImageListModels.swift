@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct LikePhotoResult: Decodable {
+    let photo: PhotoResult?
+}
+
 struct Photo {
     let id: String
     let width: CGFloat
@@ -36,10 +40,6 @@ struct PhotoResult: Decodable {
         case width = "width"
         case height = "height"
     }
-}
-
-struct LikePhotoResult: Decodable {
-    let photo: PhotoResult?
 }
 
 struct UrlsResult: Decodable {

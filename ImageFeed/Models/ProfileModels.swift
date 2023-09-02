@@ -50,3 +50,4 @@ struct ProfileImage: Codable {
         self.profileImage = decodedData.profileImage
     }
 }
+
