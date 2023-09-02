@@ -235,14 +235,21 @@
                 <viewController modalPresentationStyle="fullScreen" id="9hM-0q-WJf" customClass="SingleImageViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9vU-se-lfn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="414" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="oSx-7q-RPK" userLabel="Image View">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHc-s3-eaX">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QHc-s3-eaX">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="414" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="oSx-7q-RPK" userLabel="Image View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oSx-7q-RPK" firstAttribute="top" secondItem="QHc-s3-eaX" secondAttribute="top" id="5iA-jw-1vD"/>
+                                    <constraint firstItem="oSx-7q-RPK" firstAttribute="trailing" secondItem="QHc-s3-eaX" secondAttribute="trailing" id="V1v-Zi-iz5"/>
+                                    <constraint firstItem="oSx-7q-RPK" firstAttribute="leading" secondItem="QHc-s3-eaX" secondAttribute="leading" id="VTG-RU-3RU"/>
+                                    <constraint firstItem="oSx-7q-RPK" firstAttribute="bottom" secondItem="QHc-s3-eaX" secondAttribute="bottom" id="e6O-b7-Rsa"/>
+                                </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="lEr-NT-Lrg"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="dHR-6I-ODL"/>
                                 <connections>
@@ -252,8 +259,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwO-hB-dZl">
                                 <rect key="frame" x="8" y="56" width="48" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="AgC-5M-XgG"/>
-                                    <constraint firstAttribute="height" constant="48" id="P9w-1Y-VAL"/>
+                                    <constraint firstAttribute="height" constant="48" id="U5H-xg-xMt"/>
+                                    <constraint firstAttribute="width" constant="48" id="Zie-6T-9MI"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="nav_back_button"/>
@@ -271,16 +278,16 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fU7-I0-b4N"/>
-                        <color key="backgroundColor" name="YP Black"/>
+                        <color key="backgroundColor" name="YPblack"/>
                         <constraints>
-                            <constraint firstItem="GwO-hB-dZl" firstAttribute="leading" secondItem="fU7-I0-b4N" secondAttribute="leading" constant="8" id="H31-Qp-0f7"/>
-                            <constraint firstItem="x3A-HC-sZX" firstAttribute="centerX" secondItem="9vU-se-lfn" secondAttribute="centerX" id="JIw-FV-STD"/>
-                            <constraint firstItem="GwO-hB-dZl" firstAttribute="top" secondItem="fU7-I0-b4N" secondAttribute="top" constant="8" id="LnD-hK-nTn"/>
-                            <constraint firstItem="oSx-7q-RPK" firstAttribute="leading" secondItem="9vU-se-lfn" secondAttribute="leading" id="Lxo-Qo-xDG"/>
-                            <constraint firstItem="oSx-7q-RPK" firstAttribute="trailing" secondItem="9vU-se-lfn" secondAttribute="trailing" id="PbP-mB-h17"/>
-                            <constraint firstItem="fU7-I0-b4N" firstAttribute="bottom" secondItem="x3A-HC-sZX" secondAttribute="bottom" constant="36" id="Tav-yM-HwB"/>
-                            <constraint firstItem="oSx-7q-RPK" firstAttribute="top" secondItem="9vU-se-lfn" secondAttribute="top" id="X1t-2F-YeU"/>
-                            <constraint firstItem="oSx-7q-RPK" firstAttribute="bottom" secondItem="9vU-se-lfn" secondAttribute="bottom" id="alx-29-TdF"/>
+                            <constraint firstItem="GwO-hB-dZl" firstAttribute="leading" secondItem="fU7-I0-b4N" secondAttribute="leading" constant="8" id="A67-gD-4tg"/>
+                            <constraint firstAttribute="bottom" secondItem="QHc-s3-eaX" secondAttribute="bottom" id="OXZ-Se-EkM"/>
+                            <constraint firstItem="QHc-s3-eaX" firstAttribute="trailing" secondItem="fU7-I0-b4N" secondAttribute="trailing" id="T05-dZ-uZE"/>
+                            <constraint firstItem="QHc-s3-eaX" firstAttribute="leading" secondItem="fU7-I0-b4N" secondAttribute="leading" id="Xcz-Fx-Opn"/>
+                            <constraint firstItem="GwO-hB-dZl" firstAttribute="top" secondItem="fU7-I0-b4N" secondAttribute="top" constant="8" id="gtg-IU-tCk"/>
+                            <constraint firstItem="x3A-HC-sZX" firstAttribute="centerX" secondItem="fU7-I0-b4N" secondAttribute="centerX" id="h8R-Pz-obE"/>
+                            <constraint firstItem="QHc-s3-eaX" firstAttribute="top" secondItem="9vU-se-lfn" secondAttribute="top" id="jtV-kL-NuO"/>
+                            <constraint firstItem="fU7-I0-b4N" firstAttribute="bottom" secondItem="x3A-HC-sZX" secondAttribute="bottom" constant="36" id="niR-ez-Dp3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KTe-3f-H85"/>
@@ -328,6 +335,9 @@
         </namedColor>
         <namedColor name="YP White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YPblack">
+            <color red="0.10199999809265137" green="0.10599999874830246" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ypBlack">
             <color red="0.10199999809265137" green="0.10599999874830246" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
