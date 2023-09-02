@@ -14,7 +14,7 @@ final class ImagesListService {
     private var task: URLSessionTask?
     static let DidChangeNotification = Notification.Name(rawValue: "ImagesListServiceDidChange")
     static let shared = ImagesListService()
-    private let storageToken = OAuth2TokenStorage.shared
+    private let storageToken = OAuth2TokenStorage()
     private let dateFormatter = ISO8601DateFormatter()
     
     func fetchPhotosNextPage() {
@@ -47,6 +47,29 @@ final class ImagesListService {
         }
         self.task = task
         task.resume()
+    }
+    
+    private func photoRequest(page: String, perPage: String) -> URLRequest? {
+        guard let url = URL(string: "https://api.unsplash.com") else { return nil }
+        var request = URLRequest.makeHTTPRequest(
+            path: "/photos?page=\(page)&&per_page=\(perPage)",
+            httpMethod: "GET",
+            baseURL: url)
+        if let token = OAuth2TokenStorage().token {
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+        return request
+    }
+    
+    private func convert(_ photoResult: PhotoResult) -> Photo {
+        Photo(id: photoResult.id,
+              width: CGFloat(photoResult.width),
+              height: CGFloat(photoResult.height),
+              createdAt: self.dateFormatter.date(from:photoResult.createdAt ?? ""),
+              welcomeDescription: photoResult.welcomeDescription,
+              thumbImageURL: photoResult.urls?.thumbImageURL,
+              largeImageURL: photoResult.urls?.largeImageURL,
+              isLiked: photoResult.isLiked ?? false)
     }
     
     func updatePhotos(_ photos: [Photo]) {
@@ -101,33 +124,8 @@ final class ImagesListService {
         self.task = task
         task.resume()
     }
-}
-
-private extension ImagesListService {
     
-    func photoRequest(page: String, perPage: String) -> URLRequest? {
-        guard let url = URL(string: "https://api.unsplash.com") else { return nil }
-        var request = URLRequest.makeHTTPRequest(
-            path: "/photos?page=\(page)&&per_page=\(perPage)",
-            httpMethod: "GET",
-            baseURL: url)
-        if let token = storageToken.token {
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
-        return request
-    }
-    
-   func convert(_ photoResult: PhotoResult) -> Photo {
-        Photo(id: photoResult.id,
-              width: CGFloat(photoResult.width),
-              height: CGFloat(photoResult.height),
-              createdAt: self.dateFormatter.date(from:photoResult.createdAt ?? ""),
-              welcomeDescription: photoResult.welcomeDescription,
-              thumbImageURL: photoResult.urls?.thumbImageURL,
-              largeImageURL: photoResult.urls?.largeImageURL,
-              isLiked: photoResult.isLiked ?? false)
-    }
-   func postLikeRequest(_ token: String, photoId: String) -> URLRequest? {
+    private func postLikeRequest(_ token: String, photoId: String) -> URLRequest? {
         var requestPost = URLRequest.makeHTTPRequest(
             path: "photos/\(photoId)/like",
             httpMethod: "POST",
@@ -136,12 +134,12 @@ private extension ImagesListService {
         return requestPost
     }
     
-    func withReplaced(itemAt: Int, newValue: Photo) -> [Photo] {
+    private func withReplaced(itemAt: Int, newValue: Photo) -> [Photo] {
         photos.replaceSubrange(itemAt...itemAt, with: [newValue])
         return photos
     }
     
-    func deleteLikeRequest(_ token: String, photoId: String) -> URLRequest? {
+    private func deleteLikeRequest(_ token: String, photoId: String) -> URLRequest? {
         var requestDelete = URLRequest.makeHTTPRequest(
             path: "photos/\(photoId)/like",
             httpMethod: "DELETE",
@@ -150,4 +148,3 @@ private extension ImagesListService {
         return requestDelete
     }
 }
-
