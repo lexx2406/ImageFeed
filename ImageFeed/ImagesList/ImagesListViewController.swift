@@ -15,7 +15,7 @@ final class ImagesListViewController: UIViewController {
     private let showSingleImageSegueIdentifier = "ShowSingleImage"
     private var imagesListServiceObserver: NSObjectProtocol?
     private let imagesListService = ImagesListService.shared
-    private let alert = AlertPresenter()
+    private let alertPresenter = AlertPresenter()
     var photos: [Photo] = []
     
     private lazy var dateFormatter: DateFormatter = {
@@ -130,7 +130,7 @@ extension ImagesListViewController: ImagesListCellDelegate {
                     UIBlockingProgressHUD.dismiss()
                 case.failure(let error):
                     UIBlockingProgressHUD.dismiss()
-                    self.alert.showAlert(in: self, with: AlertModel(
+                    self.alertPresenter.showAlert(in: self, with: AlertModel(
                         title: "Error",
                         message: "The service is unavailable",
                         buttonText: "OK",
