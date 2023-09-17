@@ -13,9 +13,7 @@ final class ProfileImageService {
     private (set) var avatarURL: String?
     private let urlSession = URLSession.shared
     private var task: URLSessionTask?
-    private let storageToken = OAuth2TokenStorage.shared
-    
-    private init() { }
+    private let storageToken = OAuth2TokenStorage()
     
     func fetchProfileImageURL(username: String, _ completion: @escaping (Result<String, Error>) -> Void) {
         assert(Thread.isMainThread)
@@ -23,7 +21,7 @@ final class ProfileImageService {
         let request = makeRequest(token: storageToken.token!, username: username)
         let session = URLSession.shared
         let task = session.objectTask(for: request) { [weak self] (result: Result<UserResult, Error>) in
-            guard let self = self else { return }
+            guard let self else { return }
             switch result {
             case .success(let decodedObject):
                 let avatarURL = ProfileImage(decodedData: decodedObject)
@@ -43,7 +41,7 @@ final class ProfileImageService {
     }
     
     private func makeRequest(token: String, username: String) -> URLRequest {
-        guard let url = URL(string: "\(Constants.defaultBaseURL)" + "/users/" + username) else { fatalError("Failed to create URL") }
+        guard let url = URL(string: "\(AuthConfiguration.standard.defaultBaseURL)" + "/users/" + username) else { fatalError("Failed to create URL") }
         var request = URLRequest(url: url)
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return request
@@ -55,4 +53,3 @@ final class ProfileImageService {
         task = nil
     }
 }
-
