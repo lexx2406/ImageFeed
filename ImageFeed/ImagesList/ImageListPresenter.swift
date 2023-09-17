@@ -2,7 +2,7 @@
 //  ImageListPresenter.swift
 //  ImageFeed
 //
-//  Created by Алексей Налимов on 17.09.2023.
+//  Created by Алексей Налимов on 15.09.2023.
 //
 
 import UIKit
