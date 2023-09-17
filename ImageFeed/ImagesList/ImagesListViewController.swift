@@ -8,14 +8,20 @@
 import UIKit
 import Kingfisher
 
-final class ImagesListViewController: UIViewController {
+protocol ImagesListViewControllerProtocol: AnyObject {
+    var presenter: ImagesListPresenterProtocol? { get set }
+    func updateTableViewAnimated()
+    var photos: [Photo] { get set }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+}
+
+final class ImagesListViewController: UIViewController, ImagesListViewControllerProtocol {
     
     @IBOutlet private var tableView: UITableView!
     
     private let showSingleImageSegueIdentifier = "ShowSingleImage"
-    private var imagesListServiceObserver: NSObjectProtocol?
     private let imagesListService = ImagesListService.shared
-    private let alertPresenter = AlertPresenter()
+    private let alert = AlertPresenter()
     var photos: [Photo] = []
     
     private lazy var dateFormatter: DateFormatter = {
@@ -25,6 +31,10 @@ final class ImagesListViewController: UIViewController {
         return formatter
     }()
     
+    lazy var presenter: ImagesListPresenterProtocol? = {
+        return ImagesListPresenter()
+    } ()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -32,22 +42,16 @@ final class ImagesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        imagesListServiceObserver = NotificationCenter.default.addObserver(
-            forName: ImagesListService.DidChangeNotification,
-            object: nil,
-            queue: .main) { [weak self] _ in
-                guard let self = self else { return }
-                self.updateTableViewAnimated()
-            }
-        imagesListService.fetchPhotosNextPage()
+        presenter?.view = self
+        presenter?.viewDidLoad()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name: ImagesListService.DidChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: ImagesListService.didChangeNotification, object: nil)
     }
     
-    private func updateTableViewAnimated() {
+    func updateTableViewAnimated() {
         let oldCount = photos.count
         let newCount = imagesListService.photos.count
         photos = imagesListService.photos
@@ -110,8 +114,8 @@ extension ImagesListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row + 1 == imagesListService.photos.count {
-            imagesListService.fetchPhotosNextPage()
+        if let visibleIndexPaths = tableView.indexPathsForVisibleRows, visibleIndexPaths.contains(indexPath) {
+            presenter?.checkCompletedList(indexPath)
         }
     }
 }
@@ -121,16 +125,17 @@ extension ImagesListViewController: ImagesListCellDelegate {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         let photo = photos[indexPath.row]
         UIBlockingProgressHUD.show()
-        imagesListService.changeLike(photoId: photo.id, isLike: photo.isLiked) { result in
+        presenter?.setLike(photoId: photo.id, isLike: photo.isLiked) { result in
             DispatchQueue.main.async {
                 switch result {
                 case.success:
-                    self.photos = self.imagesListService.photos
+                    guard let newPhotos = self.presenter?.imagesListService.photos else { return }
+                    self.photos = newPhotos
                     cell.setIsLiked(isLiked: self.photos[indexPath.row].isLiked)
                     UIBlockingProgressHUD.dismiss()
                 case.failure(let error):
                     UIBlockingProgressHUD.dismiss()
-                    self.alertPresenter.showAlert(in: self, with: AlertModel(
+                    self.alert.showAlert(in: self, with: AlertModel(
                         title: "Error",
                         message: "The service is unavailable",
                         buttonText: "OK",

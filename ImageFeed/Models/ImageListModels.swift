@@ -51,3 +51,4 @@ struct UrlsResult: Decodable {
         case largeImageURL = "full"
     }
 }
+
