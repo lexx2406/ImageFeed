@@ -9,7 +9,7 @@
 import UIKit
 
 final class ProfileViewControllerSpy: ProfileViewControllerProtocol {
-
+    
     var presenter: ImageFeed.ProfilePresenterProtocol
     
     init (presenter: ProfilePresenterProtocol) {
@@ -25,23 +25,9 @@ final class ProfileViewControllerSpy: ProfileViewControllerProtocol {
     var constraints: Bool = false
     var alert: Bool = false
     
-    func updateAvatar() {
-        update = true
-    }
-    
-    func configView() {
-        views = true
-    }
-    
-    func makeConstraints() {
-        constraints = true
-    }
-    
-    func showAlert() {
-        presenter.logout()
-    }
-    
-    func showLogoutAlert() {
-        alert = true
-    }
+    func updateAvatar() { update = true }
+    func configView() { views = true }
+    func makeConstraints() { constraints = true }
+    func showAlert() { presenter.logout()}
+    func showLogoutAlert() { alert = true }
 }
