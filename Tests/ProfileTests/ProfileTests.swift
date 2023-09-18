@@ -11,7 +11,7 @@ import XCTest
 final class ProfileTests: XCTestCase {
     
     func testViewControllerCallsViewDidLoad() {
-
+        
         let profileService = ProfileService()
         let viewController = ProfileViewController()
         let presenter = ProfilePresenterSpy(profileService: profileService)

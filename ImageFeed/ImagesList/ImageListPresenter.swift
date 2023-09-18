@@ -55,7 +55,7 @@ final class ImagesListPresenter: ImagesListPresenterProtocol {
             }
         })
     }
-
+    
     internal func makeAlert(with error: Error) -> UIAlertController {
         let alert = UIAlertController(
             title: "Error",

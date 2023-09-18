@@ -53,7 +53,7 @@ final class WebViewViewController: UIViewController, WebViewControllerProtocol {
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
     }
-
+    
     @IBAction private func didTapBackButton(_ sender: UIButton) {
         delegate?.webViewViewControllerDidCancel(_vc: self)
     }

@@ -202,6 +202,7 @@
 		A817AEE02AB823E5006DF159 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				A817AEE62AB82486006DF159 /* ImageFeedUITests */,
 				A817AEC82AB82057006DF159 /* ProfileTests */,
 				A817AED42AB82153006DF159 /* ImageListTests */,
 				A81DC87E2AB781A100836FE1 /* ImageFeedTests */,
@@ -266,7 +267,6 @@
 				A82E1A3C2A5DBEAD008C54D3 /* Main.storyboard */,
 				A82E1A412A5DBEAF008C54D3 /* LaunchScreen.storyboard */,
 				A82E1A442A5DBEAF008C54D3 /* Info.plist */,
-				A817AEE62AB82486006DF159 /* ImageFeedUITests */,
 			);
 			path = ImageFeed;
 			sourceTree = "<group>";

@@ -7,8 +7,6 @@
 
 import UIKit
 
-import UIKit
-
 protocol WebViewPresenterProtocol {
     var view: WebViewControllerProtocol? { get set }
     func viewDidLoad()
@@ -19,10 +17,10 @@ protocol WebViewPresenterProtocol {
 final class WebViewPresenter: WebViewPresenterProtocol {
     weak var view: WebViewControllerProtocol?
     private let authHelper: AuthHelperProtocol
-      
-      init(authHelper: AuthHelperProtocol) {
-          self.authHelper = authHelper
-      }
+    
+    init(authHelper: AuthHelperProtocol) {
+        self.authHelper = authHelper
+    }
     
     func viewDidLoad() {
         let request = authHelper.authRequest()

@@ -5,12 +5,12 @@
 //  Created by Алексей Налимов on 17.09.2023.
 //
 
-@testable import ImageFeed // добавляем чтобы тест знал о проекте ImageFeed
+@testable import ImageFeed 
 import XCTest
 
 
 final class ImageFeedTests: XCTestCase {
-
+    
     func testViewControllerCallsViewDidLoad() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "WebViewViewController") as! WebViewViewController
