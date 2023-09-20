@@ -68,6 +68,7 @@ final class ProfileViewController: UIViewController, ProfileViewControllerProtoc
         descriptionLabel.font = .systemFont(ofSize: 13)
         descriptionLabel.textColor = .YPWhite
         exitButton.setImage(UIImage(named: "logout_button"), for: .normal)
+        exitButton.accessibilityIdentifier = "logout button"
         exitButton.tintColor = .YPRed
         
     }
